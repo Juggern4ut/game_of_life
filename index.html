@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="/js/cell.js"></script>
+    <script src="/js/canvas.js"></script>
+    <script src="/js/main.js"></script>
+    <style>
+
+      #canvas{
+        cursor: pointer;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .buttons p{
+        display: inline-block;
+        border: 1px solid #dedede;
+        cursor: pointer;
+        padding: 10px 20px;
+        background: rgb(0, 21, 114);
+        color: #fff;
+        font-family: "Consolas";
+        width: 100px;
+        text-align: center;
+      }
+
+      .container{
+        width: 500px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <canvas
+        style="border: 1px solid #444"
+        width="500"
+        height="500"
+        id="canvas"
+      ></canvas>
+      <div class="buttons">
+        <p id="start">Start</p>
+        <p id="clear">Clear</p>
+        <p id="randomize">Randomize</p>
+      </div>
+    </div>
+  </body>
+</html>
