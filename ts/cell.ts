@@ -21,7 +21,7 @@ class Cell {
   /**
    * Will return the amount of alive cells
    * adjacent to the current cell
-   * @returns The number of ajacent alive cells
+   * @returns {number} The number of ajacent alive cells
    */
   getAdjacentLiveCells(): number {
     let adjacentAliveCells: number = 0;
@@ -50,8 +50,9 @@ class Cell {
    * Will apply the rules of Conway game of life
    * to change the status of the cell to either dead
    * or alive
+   * @returns {void}
    */
-  updateLife() {
+  updateLife(): void {
     let adjacentCells = this.getAdjacentLiveCells();
 
     if (adjacentCells === 3) {
@@ -66,8 +67,9 @@ class Cell {
   /**
    * Will draw the cell to the canvas. The older the
    * cell the more red it will appear
+   * @returns {void}
    */
-  draw() {
+  draw(): void {
     if (this.isAlive) {
       let saturation = this.age > 25 ? 50 : this.age * 2;
       this.canvas.ctx.fillStyle = "hsl(0," + saturation + "%,50%)";

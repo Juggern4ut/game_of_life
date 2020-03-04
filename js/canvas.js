@@ -25,6 +25,7 @@ var Canvas = /** @class */ (function () {
     /**
      * Lets the user kill and create
      * cells by clicking on the canvas
+     * @returns {void}
      */
     Canvas.prototype.addMouseListener = function () {
         var _this = this;
@@ -44,6 +45,7 @@ var Canvas = /** @class */ (function () {
      * Will return the cell of a given index
      * @param index The index of the cell
      * that should be returned
+     * @returns {Cell} The found Cell or null
      */
     Canvas.prototype.getCell = function (index) {
         if (index < 0)
@@ -52,6 +54,7 @@ var Canvas = /** @class */ (function () {
     };
     /**
      * Starts the interval
+     * @returns {void}
      */
     Canvas.prototype.start = function () {
         var _this = this;
@@ -68,6 +71,7 @@ var Canvas = /** @class */ (function () {
     };
     /**
      * Stops the interval
+     * @returns {void}
      */
     Canvas.prototype.stop = function () {
         this.running = false;
@@ -75,6 +79,7 @@ var Canvas = /** @class */ (function () {
     };
     /**
      * Kill all cells
+     * @returns {void}
      */
     Canvas.prototype.clear = function () {
         this.cells.forEach(function (cell) {
@@ -85,6 +90,7 @@ var Canvas = /** @class */ (function () {
     /**
      * Loop through all cells and randomly set
      * them alive or dead
+     * @returns {void}
      */
     Canvas.prototype.randomize = function () {
         this.cells.forEach(function (cell) {

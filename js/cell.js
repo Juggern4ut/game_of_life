@@ -14,7 +14,7 @@ var Cell = /** @class */ (function () {
     /**
      * Will return the amount of alive cells
      * adjacent to the current cell
-     * @returns The number of ajacent alive cells
+     * @returns {number} The number of ajacent alive cells
      */
     Cell.prototype.getAdjacentLiveCells = function () {
         var adjacentAliveCells = 0;
@@ -36,6 +36,7 @@ var Cell = /** @class */ (function () {
      * Will apply the rules of Conway game of life
      * to change the status of the cell to either dead
      * or alive
+     * @returns {void}
      */
     Cell.prototype.updateLife = function () {
         var adjacentCells = this.getAdjacentLiveCells();
@@ -52,6 +53,7 @@ var Cell = /** @class */ (function () {
     /**
      * Will draw the cell to the canvas. The older the
      * cell the more red it will appear
+     * @returns {void}
      */
     Cell.prototype.draw = function () {
         if (this.isAlive) {

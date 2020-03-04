@@ -36,8 +36,9 @@ class Canvas {
   /**
    * Lets the user kill and create
    * cells by clicking on the canvas
+   * @returns {void}
    */
-  addMouseListener() {
+  addMouseListener(): void {
     this.canvas.addEventListener("mousedown", e => {
       let x = Math.floor(e.offsetX / this.cellSize);
       let y = Math.floor(e.offsetY / this.cellSize);
@@ -55,6 +56,7 @@ class Canvas {
    * Will return the cell of a given index
    * @param index The index of the cell
    * that should be returned
+   * @returns {Cell} The found Cell or null
    */
   getCell(index): Cell {
     if (index < 0) return null;
@@ -63,8 +65,9 @@ class Canvas {
 
   /**
    * Starts the interval
+   * @returns {void}
    */
-  start() {
+  start(): void {
     this.running = true;
     this.interval = setInterval(() => {
       this.cells.forEach(cell => {
@@ -75,22 +78,23 @@ class Canvas {
       this.cells.forEach(cell => {
         cell.isAlive = cell.nextIsAlive;
       });
-
     }, this.speedInterval);
   }
 
   /**
    * Stops the interval
+   * @returns {void}
    */
-  stop() {
+  stop(): void {
     this.running = false;
     clearInterval(this.interval);
   }
 
   /**
    * Kill all cells
+   * @returns {void}
    */
-  clear() {
+  clear(): void {
     this.cells.forEach(cell => {
       cell.isAlive = false;
       cell.draw();
@@ -100,8 +104,9 @@ class Canvas {
   /**
    * Loop through all cells and randomly set
    * them alive or dead
+   * @returns {void}
    */
-  randomize() {
+  randomize(): void {
     this.cells.forEach(cell => {
       let alive = Math.round(Math.random());
       cell.isAlive = alive === 1 ? true : false;
