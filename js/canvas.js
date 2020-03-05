@@ -2,6 +2,7 @@ var Canvas = /** @class */ (function () {
     /**
      * Constructs a new Game and creates
      * all the cells for the game
+     * @returns {void}
      */
     function Canvas() {
         this.cells = [];
@@ -40,6 +41,13 @@ var Canvas = /** @class */ (function () {
                 cell.draw();
             }
         });
+    };
+    Canvas.prototype.changeSpeed = function (speed) {
+        this.speedInterval = speed;
+        if (this.running) {
+            this.stop();
+            this.start();
+        }
     };
     /**
      * Will return the cell of a given index

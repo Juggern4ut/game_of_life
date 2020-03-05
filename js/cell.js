@@ -49,6 +49,9 @@ var Cell = /** @class */ (function () {
         else {
             this.nextIsAlive = false;
         }
+        if (this.isAlive !== this.nextIsAlive) {
+            this.age = 0;
+        }
     };
     /**
      * Will draw the cell to the canvas. The older the

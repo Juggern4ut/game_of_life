@@ -62,6 +62,10 @@ class Cell {
     } else {
       this.nextIsAlive = false;
     }
+
+    if (this.isAlive !== this.nextIsAlive) {
+      this.age = 0;
+    }
   }
 
   /**

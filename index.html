@@ -8,8 +8,7 @@
     <script src="./js/canvas.js"></script>
     <script src="./js/main.js"></script>
     <style>
-
-      #canvas{
+      #canvas {
         cursor: pointer;
       }
 
@@ -18,19 +17,19 @@
         justify-content: space-between;
       }
 
-      .buttons p{
+      .buttons p {
         display: inline-block;
         border: 1px solid #dedede;
         cursor: pointer;
         padding: 10px 20px;
-        background: rgb(0, 21, 114);
+        background: #001572;
         color: #fff;
         font-family: "Consolas";
         width: 100px;
         text-align: center;
       }
 
-      .container{
+      .container {
         width: 500px;
         margin: 0 auto;
       }
@@ -48,6 +47,11 @@
         <p id="start">Start</p>
         <p id="clear">Clear</p>
         <p id="randomize">Randomize</p>
+      </div>
+      <div class="speed">
+        <span>Interval duration:</span>
+        <input type="range" min="200" max="2000" value="1000" id="speed" />
+        <span id="speed_value">1000</span>
       </div>
     </div>
   </body>

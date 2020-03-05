@@ -12,6 +12,7 @@ class Canvas {
   /**
    * Constructs a new Game and creates
    * all the cells for the game
+   * @returns {void}
    */
   constructor() {
     this.canvas = document.getElementById("canvas") as HTMLCanvasElement;
@@ -50,6 +51,21 @@ class Canvas {
         cell.draw();
       }
     });
+  }
+
+  /**
+   * Will change the speed between
+   * the intervals.
+   * @param speed The time between the intervals
+   * in milliseconds
+   */
+  changeSpeed(speed: number) {
+    this.speedInterval = speed;
+
+    if (this.running) {
+      this.stop();
+      this.start();
+    }
   }
 
   /**
